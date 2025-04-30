@@ -7,6 +7,9 @@ rodrigo.AddItem(fireStaff);
 Knight leon = new Knight("Leon"); // suponiendo que tenés una clase Knight
 Shield ironShield = new Shield("Escudo de Hierro");
 leon.AddItem(ironShield);
+leon.TotalDefense();
+Console.WriteLine($"La defensa de Leon es de : {leon.TotalDefense()} ya que tiene puesto un Escudo de Hierro");
+
 
 // El mago ataca al caballero con su ataque total
 int attackValue = rodrigo.TotalAttack();
@@ -35,6 +38,10 @@ Valentina.AddItem(Sable);
 attackValue = Agustin.TotalAttack();
 Valentina.ReceiveAttack(attackValue);
 Console.WriteLine($"Vida de Valentina después del ataque: {Valentina.CurrentHealth}");
+Valentina.Heal(); //curo al personaje
+Console.WriteLine($"Vida de Valentina Actual: {Valentina.CurrentHealth}");
+
+
 
 
 
