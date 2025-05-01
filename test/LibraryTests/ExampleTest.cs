@@ -1,15 +1,38 @@
-namespace LibraryTests;
+using NUnit.Framework;
+using Library;
 
-public class Tests
+namespace LibraryTests
 {
-    [SetUp]
-    public void Setup()
+    [TestFixture]
+    public class CharacterTest
     {
-    }
+        private Wizard wizard;
 
-    [Test]
-    public void Test1()
-    {
-        Assert.Pass();
+        [SetUp]
+        public void Setup()
+        {
+            wizard = new Wizard("Gandalf");
+        }
+
+        [Test]
+        public void Wizard_ShouldStartWithFullHealth()
+        {
+            Assert.AreEqual(110, wizard.CurrentHealth);
+        }
+
+        [Test]
+        public void ReceiveAttack_ShouldNotGoBelowZero()
+        {
+            wizard.ReceiveAttack(999);
+            Assert.AreEqual(0, wizard.CurrentHealth);
+        }
+
+        [Test]
+        public void Heal_ShouldRestoreToFullHealth()
+        {
+            wizard.ReceiveAttack(80);
+            wizard.Heal();
+            Assert.AreEqual(110, wizard.CurrentHealth);
+        }
     }
 }
