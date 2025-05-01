@@ -20,6 +20,10 @@ Console.WriteLine($"Vida de Leon después del ataque: {leon.CurrentHealth}");
 Knight Santiago = new Knight("Santiago");
 Sword Katana = new Sword("Katana");
 Santiago.AddItem(Katana);
+Bow_and_Arrow Arco = new Bow_and_Arrow("Arco");
+Santiago.AddItem(Arco);
+Santiago.TotalAttack(); 
+Console.WriteLine($"El ataque de Santiago es de : {Santiago.TotalAttack()} ya que tiene puesto un Arco y una Katana");
 
 Elve alex = new Elve("alex");
 Sword Hacha = new Sword("Hacha");
