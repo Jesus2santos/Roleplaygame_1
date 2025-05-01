@@ -4,6 +4,12 @@ Wizard rodrigo = new Wizard("Rodrigo");
 Staff fireStaff = new Staff("Bastón de Fuego", 25, 5);
 rodrigo.AddItem(fireStaff);
 
+SpellBook fireBook = new SpellBook("Libro de Fuego");
+fireBook.AddSpell(new Spell("Bola de Fuego"));
+fireBook.AddSpell(new Spell("Rayo de Fuego"));
+rodrigo.AddItem(fireBook);
+Console.WriteLine($"El ataque del libro de hechizos de {rodrigo.Name} es: {fireBook.AttackValue}");
+
 Knight leon = new Knight("Leon"); // suponiendo que tenés una clase Knight
 Shield ironShield = new Shield("Escudo de Hierro");
 leon.AddItem(ironShield);
