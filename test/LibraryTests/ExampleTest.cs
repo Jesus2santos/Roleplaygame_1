@@ -11,7 +11,7 @@ namespace LibraryTests
         [SetUp]
         public void Setup()
         {
-            wizard = new Wizard("Gandalf");
+            wizard = new Wizard("Santiago");
         }
 
         [Test]
